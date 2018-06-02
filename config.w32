@@ -1,0 +1,7 @@
+ARG_ENABLE('say', 'say support', 'no');
+
+if (PHP_SAY != 'no') {
+	AC_DEFINE('HAVE_SAY', 1, 'say support enabled');
+
+	EXTENSION('say', 'say.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
